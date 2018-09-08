@@ -18,9 +18,7 @@ function getEmojiDiscriminator(emoji) {
  */
 module.exports = function(client, config) {
 	
-	client
-
-		.on("messageReactionAdd", (messageReaction, user) => {
+	client.on("messageReactionAdd", (messageReaction, user) => {
 			//Bot should not react to its own reactions
 			if (user == client.user) return;
 			var member = messageReaction.message.guild.members.get(user.id);
